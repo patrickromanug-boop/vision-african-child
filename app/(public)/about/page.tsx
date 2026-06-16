@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next'
 import { Target, Eye, Heart, Award, Users, BookOpen } from 'lucide-react'
 
