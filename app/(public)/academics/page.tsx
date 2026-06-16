@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next'
 import { Baby, BookOpen, Trophy, Music, Palette, Globe } from 'lucide-react'
 
