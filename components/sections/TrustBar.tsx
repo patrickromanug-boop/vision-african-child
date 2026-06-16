@@ -7,7 +7,7 @@ const stats = [
   { icon: Award, value: '2015', label: 'Year Founded', suffix: '' },
   { icon: Users, value: '200', label: 'Happy Pupils', suffix: '+' },
   { icon: BookOpen, value: '2', label: 'Programs Offered', suffix: '' },
-  { icon: MapPin, value: 'Busabala', label: 'Wakiso District', suffix: '' }
+  { icon: MapPin, value: 'Busabala', label: 'Wakiso District', suffix: '' },
 ]
 
 export default function TrustBar() {
