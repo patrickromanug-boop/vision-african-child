@@ -1,1 +1,20 @@
 
+import { clsx, type ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
+import { format } from 'date-fns'
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+
+export function formatDate(date: string) {
+  return format(new Date(date), 'MMMM d, yyyy')
+}
+
+export function formatCurrency(amount: number) {
+  return new Intl.NumberFormat('en-UG').format(amount) + ' UGX'
+}
+
+export function truncate(str: string, n: number) {
+  return str.length > n ? str.slice(0, n - 1) + '...' : str
+}
