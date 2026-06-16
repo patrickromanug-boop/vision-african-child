@@ -1,4 +1,3 @@
-
 'use client'
 
 import { MessageCircle } from 'lucide-react'
@@ -9,7 +8,7 @@ export default function WhatsAppButton() {
     'Hello! I am interested in enrolling my child at Vision African Child School. Can you please help me?'
   )
   return (
-    <a
+    
       href={`https://wa.me/${phone}?text=${message}`}
       target="_blank"
       rel="noopener noreferrer"
