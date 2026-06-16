@@ -1,4 +1,3 @@
-
 import { createClient } from '@/lib/supabase/server'
 import { FileText, Bell, Images, MessageSquare, DollarSign } from 'lucide-react'
 import Link from 'next/link'
