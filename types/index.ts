@@ -1,4 +1,3 @@
-
 export type ApplicationStatus = 'Pending' | 'Reviewed' | 'Accepted' | 'Rejected'
 export type GalleryCategory = 'General' | 'Classrooms' | 'Sports' | 'Events' | 'Graduation'
 
