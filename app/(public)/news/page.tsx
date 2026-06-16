@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next'
 import { createClient } from '@/lib/supabase/server'
 import { Bell, Calendar } from 'lucide-react'
