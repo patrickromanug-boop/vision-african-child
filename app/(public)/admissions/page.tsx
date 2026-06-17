@@ -141,9 +141,9 @@ export default async function AdmissionsPage() {
             <Link href="/apply" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#F4720B] text-white rounded-xl font-bold hover:bg-[#c95c08] transition-colors">
               Apply Now <ArrowRight size={18} />
             </Link>
-            <a href="tel:+256700000000" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-colors">
-              <Phone size={18} /> Call for More Info
-            </a>
+           <button onClick={() => window.open('tel:+256700000000', '_self')} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-colors cursor-pointer">
+  <Phone size={18} /> Call for More Info
+</button>
           </div>
         </div>
       </section>
