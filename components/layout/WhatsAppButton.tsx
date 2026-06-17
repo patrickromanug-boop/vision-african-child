@@ -7,17 +7,15 @@ export default function WhatsAppButton() {
   const message = encodeURIComponent(
     'Hello! I am interested in enrolling my child at Vision African Child School. Can you please help me?'
   )
+  const url = `https://wa.me/${phone}?text=${message}`
 
   return (
-    
-      href={`https://wa.me/${phone}?text=${message}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#25D366] text-white px-4 py-3 rounded-full shadow-xl hover:scale-105 transition-transform"
-      aria-label="Chat on WhatsApp"
+    <button
+      onClick={() => window.open(url, '_blank')}
+      className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#25D366] text-white px-4 py-3 rounded-full shadow-xl hover:scale-105 transition-transform cursor-pointer"
     >
       <MessageCircle size={22} fill="white" />
       <span className="text-sm font-semibold hidden sm:inline">WhatsApp Us</span>
-    </a>
+    </button>
   )
 }
