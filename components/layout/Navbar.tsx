@@ -29,18 +29,21 @@ export default function Navbar() {
 
   useEffect(() => { setIsOpen(false) }, [pathname])
 
+  const handlePhone = () => window.open('tel:+256700000000', '_self')
+  const handleEmail = () => window.open('mailto:info@visionafricanchild.ug', '_self')
+
   return (
     <>
       {/* Top info bar */}
       <div className="bg-[#195F2E] text-white text-sm py-2 hidden md:block">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center gap-5">
-            <a href="tel:+256700000000" className="flex items-center gap-1.5 hover:text-orange-300 transition-colors">
+            <button onClick={handlePhone} className="flex items-center gap-1.5 hover:text-orange-300 transition-colors cursor-pointer">
               <Phone size={13} /> +256 700 000 000
-            </a>
-            <a href="mailto:info@visionafricanchild.ug" className="flex items-center gap-1.5 hover:text-orange-300 transition-colors">
+            </button>
+            <button onClick={handleEmail} className="flex items-center gap-1.5 hover:text-orange-300 transition-colors cursor-pointer">
               <Mail size={13} /> info@visionafricanchild.ug
-            </a>
+            </button>
           </div>
           <span className="text-green-200 text-xs">Busabala Trading Centre, Wakiso District</span>
         </div>
@@ -124,9 +127,9 @@ export default function Navbar() {
                 </Link>
               ))}
               <div className="border-t border-gray-100 pt-3 mt-1">
-                <a href="tel:+256700000000" className="flex items-center gap-2 px-4 py-2 text-sm text-gray-500">
+                <button onClick={handlePhone} className="flex items-center gap-2 px-4 py-2 text-sm text-gray-500 hover:text-[#195F2E] transition-colors cursor-pointer">
                   <Phone size={14} /> +256 700 000 000
-                </a>
+                </button>
               </div>
             </div>
           </div>
