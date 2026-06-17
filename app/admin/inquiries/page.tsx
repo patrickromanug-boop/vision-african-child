@@ -31,6 +31,13 @@ export default function InquiriesPage() {
     if (selected?.id === id) setSelected(null)
   }
 
+  // Helper: open mailto, tel, WhatsApp
+  const openMail = (email: string, subject?: string) =>
+    window.open(`mailto:${email}?subject=${encodeURIComponent(subject || 'Your Inquiry')}`, '_self')
+  const openTel = (phone: string) => window.open(`tel:${phone}`, '_self')
+  const openWhatsApp = (phone: string, name: string) =>
+    window.open(`https://wa.me/${phone.replace(/\D/g, '')}?text=${encodeURIComponent(`Hello ${name}, thank you for contacting Vision African Child School.`)}`, '_blank')
+
   return (
     <div className="p-8">
       <div className="mb-8">
@@ -74,13 +81,13 @@ export default function InquiriesPage() {
               </div>
 
               <div className="flex flex-wrap gap-4 mb-5 p-4 bg-gray-50 rounded-xl">
-                <a href={`mailto:${selected.email}`} className="flex items-center gap-2 text-sm text-[#195F2E] hover:underline">
+                <button onClick={() => openMail(selected.email, selected.subject || undefined)} className="flex items-center gap-2 text-sm text-[#195F2E] hover:underline cursor-pointer">
                   <Mail size={13} />{selected.email}
-                </a>
+                </button>
                 {selected.phone && (
-                  <a href={`tel:${selected.phone}`} className="flex items-center gap-2 text-sm text-[#195F2E] hover:underline">
+                  <button onClick={() => openTel(selected.phone!)} className="flex items-center gap-2 text-sm text-[#195F2E] hover:underline cursor-pointer">
                     <Phone size={13} />{selected.phone}
-                  </a>
+                  </button>
                 )}
               </div>
 
@@ -89,16 +96,13 @@ export default function InquiriesPage() {
               </div>
 
               <div className="flex gap-3">
-                <a href={`mailto:${selected.email}?subject=Re: ${selected.subject || 'Your Inquiry'}`}
-                  className="px-5 py-2.5 bg-[#195F2E] text-white rounded-xl text-sm font-semibold hover:bg-[#124820] transition-colors">
+                <button onClick={() => openMail(selected.email, selected.subject || undefined)} className="px-5 py-2.5 bg-[#195F2E] text-white rounded-xl text-sm font-semibold hover:bg-[#124820] transition-colors cursor-pointer">
                   Reply via Email
-                </a>
+                </button>
                 {selected.phone && (
-                  <a href={`https://wa.me/${selected.phone.replace(/\D/g, '')}?text=Hello ${selected.name}, thank you for contacting Vision African Child School.`}
-                    target="_blank"
-                    className="px-5 py-2.5 bg-[#25D366] text-white rounded-xl text-sm font-semibold hover:opacity-90 transition-opacity">
+                  <button onClick={() => openWhatsApp(selected.phone!, selected.name)} className="px-5 py-2.5 bg-[#25D366] text-white rounded-xl text-sm font-semibold hover:opacity-90 transition-opacity cursor-pointer">
                     Reply on WhatsApp
-                  </a>
+                  </button>
                 )}
               </div>
             </div>
